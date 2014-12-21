@@ -6,6 +6,7 @@ audio_realtekALC
 
 
 ### 更新：
+-	v3.5 - Realtek ALC AppleHDA - 修复睡眠唤醒后音频失效的问题
 -	v3.4 - 支持BRIX/ALC269, BRIX Pro/ALC283 and NUC/ALC283, 详见***附注6***
 -	v3.3 - audio_realtekALC-100.sh (v1.0.3) release
 -	v3.1：增加了对Yosemite下*x99*的补丁支持：`audio_alc_x99-hda-100_patch.command`。
@@ -18,6 +19,7 @@ audio_realtekALC
 ###	方法(在适当的位置打补丁)
 1.	已打过补丁的`AppleHDA.kext` - ConfigData, layouts, Platforms and HDA binary patch
 2.	原生`AppleHDA.kext`
+
 
 ###	安装步骤
 1.	给`AppleHDA.kext`打补丁
@@ -72,8 +74,8 @@ audio_realtekALC
 
 
 ###	OS X不支持的芯片组
-  A. 9系主板支持 (仅支持Mavericks系统, 详见***附注4***)
-  B. X99主板支持 (详见***附注5***)
+1.	9系主板支持 (仅支持Mavericks系统, 详见***附注4***)
+2.	X99主板支持 (详见***附注5***)
 
 
 ###	附注
@@ -154,5 +156,5 @@ bcc9, RevoGirl, PikeRAlpha, SJ_UnderWater, RehabMan, TimeWalker75a
 ###	toleda
 https://github.com/toleda/audio_RealtekALC
 
-###	Chinese version editor:
+###	Chinese translator:
 Hasse
