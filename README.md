@@ -2,14 +2,14 @@ audio_realtekALC
 ============
 
 ### 瑞昱ALC声卡 - AppleHDA.kext补丁
-此补丁通过`AppleHDA.kext`激活瑞昱ALC系列声卡的所有功能，包括板载音频、HDMI以及DP音响（详见***附注1***）。该脚本会给音频解码二进制文件打补丁，并安装config data配置数据（接口配置），layouts布局（音频设备）和platforms平台（路线图）等文件。除了本补丁，无其他文件要求下载。
+此补丁通过AppleHDA.kext激活瑞昱ALC系列声卡的所有功能，包括板载音频、HDMI以及DP音响（详见***附注1***）。该脚本会给音频解码二进制文件打补丁，并安装config data配置数据（接口配置），layouts布局（音频设备）和platforms平台（路线图）等文件。除了本补丁，无其他文件要求下载。
 
 
 ### 更新：
 -	v3.5 - Realtek ALC AppleHDA - 修复睡眠唤醒后音频失效的问题
 -	v3.4 - 支持BRIX/ALC269, BRIX Pro/ALC283 and NUC/ALC283, 详见***附注6***
 -	v3.3 - audio_realtekALC-100.sh (v1.0.3) release
--	v3.1：增加了对Yosemite下*x99*的补丁支持：`audio_alc_x99-hda-100_patch.command`。
+-	v3.1：增加了对Yosemite下*x99*的补丁支持：audio_alc_x99-hda-100_patch.command。
 -	v3：对Yosemite/10.10.x系统和Mavericks/10.9.x系统和Mountain Lion/10.8.x系统的支持
 	-	注：audio_realtekALC-90_v2.command不支持
 -	v2.1：对9系主板/EAPD的支持增加到ALC887,892,898,1150等型号，赞助者：kidalive
@@ -17,22 +17,22 @@ audio_realtekALC
 
 
 ###	方法(在适当的位置打补丁)
-1.	已打过补丁的`AppleHDA.kext` - ConfigData, layouts, Platforms and HDA binary patch
-2.	原生`AppleHDA.kext`
+1.	已打过补丁的AppleHDA.kext - ConfigData, layouts, Platforms and HDA binary patch
+2.	原生AppleHDA.kext
 
 
 ###	安装步骤
-1.	给`AppleHDA.kext`打补丁
+1.	给AppleHDA.kext打补丁
 	1.	找到audio_realtekALC-100.command.zip(见上)
 	2.	下载
-	3.	解压缩放到`~/Download`下，双击
+	3.	解压缩放到~/Download下，双击
 	4.	输入密码
-	5.	确认型号**Codec ALCxxx: 仅适用于(885, 887, 888, 889, 892, 898, 1150)**
+	5.	**确认型号**Codec ALCxxx: 仅适用于(885, 887, 888, 889, 892, 898, 1150)
 	6.	是否为Current_v100302 (y/n): 仅适用于(887, 888 only)
 	7.	是否激活HD4600 HDMI音频：	仅适用于(887, 892, 898, 1150)
-2.	验证`AppleHDA.kext`是否已安装
-	-	SLE目录下是否存在修改过的`AppleHDA.kext`
-	-	点击查看版本号是否为`vx.x-toledaALCxxx`格式
+2.	验证AppleHDA.kext是否已安装
+	-	SLE目录下是否存在修改过的AppleHDA.kext
+	-	点击查看版本号是否为vx.x-toledaALCxxx格式
 3.	重启
 4.	验证板载音频
 	-	系统设置/声音/输出/选择音频设备
@@ -43,6 +43,15 @@ audio_realtekALC
 2.	https://github.com/toleda/audio_CloverALC
 
 
+### [参考教程](https://github.com/toleda/audio_ALC_guides)
+  A. 兼容性 - Realtek ALC AppleHDA_v2 [Guide]
+  B. 自定义 - Realtek ALC AppleHDA_v2 [Guide]
+  C. 睡眠唤醒后无声 - Realtek ALC AppleHDA [Fixes]
+  D. (打完补丁后)无音频设备 - Realtek ALC AppleHDA [Guide]
+  E. (打完补丁后)没有声音 - Realtek ALC AppleHDA [Guide]
+  F. 环绕音响 - Realtek ALC -  AppleHDA [Guide]
+
+
 ### 条件要求
 1.	Chameleon/Chimera/Clover：
 	-	可选择Clover补丁方式（无需DSDT）
@@ -51,7 +60,7 @@ audio_realtekALC
 	-	10.10或更新的
 	-	10.9或更新的
 	-	10.8或更新的
-3.	原版`AppleHDA.kext`（若未安装或不存在，请先安装OSX系统）
+3.	原版AppleHDA.kext（若未安装或不存在，请先安装OSX系统）
 4.	受支持的瑞昱板载音频解码型号
 5.	音频ID注入，参考 https://github.com/toleda/audio_ALCinjection
 
@@ -92,24 +101,24 @@ audio_realtekALC
 		-	打过补丁的: AppleHDA.kext
 	2.	如果软件升级后造成音频失败
 		-	参考上面的安装步骤 (再次运行脚本)
-		-	如果新补丁失败，安装备份过的可以工作的打过补丁的`AppleHDA.kext`
+		-	如果新补丁失败，安装备份过的可以工作的打过补丁的AppleHDA.kext
 4. OS X/AppleHDA.kext/9系主板支持 (仅限于Mavericks，并只需从以下选择一种方法安装)
-	1.	下载并安装`audio_alc_9series-hda-93_patch.command`
-	2.	给ApppleHDAController`以二进制方式打补丁:
+	1.	下载并安装audio_alc_9series-hda-93_patch.command
+	2.	给ApppleHDAController以二进制方式打补丁:
 		-	查找: 20 8C
 		-	替换 (会有四次): A0 8C
 		-	保存
 		-	重启
 5. OS X/AppleHDA.kext/x99主板支持 (暂时的方案, 并只需从以下选择一种方法安装)
-	1.	下载并安装`audio_alc_x99-hda-100_patch.command`
-	2.	给ApppleHDAController`以二进制方式打补丁:
+	1.	下载并安装audio_alc_x99-hda-100_patch.command
+	2.	给ApppleHDAController以二进制方式打补丁:
 		-	查找: 20 8C
 		-	替换 (会有四次): 20 8D
 		-	保存
 		-	重启
 6. 对BRIX/ALC269, BRIX Pro/ALC283 以及 NUC/ALC283 的支持
 	1. 安装方法
-	   -	将补丁文件`realtekALC`放到适当的位置
+	   -	将补丁文件realtekALC放到适当的位置
 	2. 音频设备
 		-	ALC269 - BRIX/耳机和 SPDIF数字输出
 		-	ALC283 - BRIX Pro 和 NUC/耳机 (麦克风尚不支持)
@@ -119,12 +128,12 @@ audio_realtekALC
 
 
 ###	工具
-1. IOReg (View Raw) - [点这里下载](https://github.com/toleda/audio_ALCInjection/blob/master/IORegistryExplorer_v2.1.zip)
+1. IOReg (View Raw) - [点这里下载](https://github.com/toleda/audio_ALCInjection/blob/master/IORegistryExplorer_v2.1.zip) (其实论坛也有，鼓励大家自己搜索)
 2. DPCIManger - http://sourceforge.net/projects/dpcimanager/
 3. audio_codecdetect.command (见上面的文件) - 侦测、确认以及安装音频解码
 	-	选择 audio_codecdetect.command 下载
 	-	放到 ~/Downloads/audio_codecdetect.command 位置双击安装
-	-	输入密码:
+	-	输入密码
 
 
 ###	问题报告 (需包含以下信息)
@@ -136,7 +145,7 @@ audio_realtekALC
 	- AppleHDA(哪种型号).kext (例如, AppleHDA1150.kext, 如果你安装的是ALC1150的话)
 	- DPCIManager/Misc/Boot Log
 	- 系统信息/硬件/音频/的完整截图
-	- 控制台/所有消息/选择包含`kernel Sound assertions`的部分/保存为...
+	- 控制台/所有消息/选择包含kernel Sound assertions的部分/保存为...
 	- 如果使用的是Chameleon/Chimera
 		1. Extra/org.chameleon.Boot.plist
 		2. Extra/dsdt.aml (如果有)
