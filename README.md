@@ -44,12 +44,12 @@ audio_realtekALC
 
 
 ### [参考教程](https://github.com/toleda/audio_ALC_guides)
-  A. 兼容性 - Realtek ALC AppleHDA_v2 [Guide]
-  B. 自定义 - Realtek ALC AppleHDA_v2 [Guide]
-  C. 睡眠唤醒后无声 - Realtek ALC AppleHDA [Fixes]
-  D. (打完补丁后)无音频设备 - Realtek ALC AppleHDA [Guide]
-  E. (打完补丁后)没有声音 - Realtek ALC AppleHDA [Guide]
-  F. 环绕音响 - Realtek ALC -  AppleHDA [Guide]
+1.	兼容性 - Realtek ALC AppleHDA_v2 [Guide]
+2.	自定义 - Realtek ALC AppleHDA_v2 [Guide]
+3.	睡眠唤醒后无声 - Realtek ALC AppleHDA [Fixes]
+4.	(打完补丁后)无音频设备 - Realtek ALC AppleHDA [Guide]
+5.	(打完补丁后)没有声音 - Realtek ALC AppleHDA [Guide]
+6.	环绕音响 - Realtek ALC -  AppleHDA [Guide]
 
 
 ### 条件要求
